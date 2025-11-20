@@ -16,7 +16,7 @@ Answer:
 
 ```python
 # Thrift schema (student.thrift)
-# Thrift schema (student.thrift)
+
 %%writefile ../schema/student.thrift
 
 struct Student {
@@ -30,7 +30,7 @@ service School {
 }
 
 # Thrift server (student_server.py)
-# Thrift server (student_server.py)
+
 %%writefile ../student_server.py
 import thriftpy2
 from thriftpy2.rpc import make_server
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     server.serve()
 
 # Thrift client (student_client.py)
-# Thrift client (student_client.py)
+
 %%writefile ../student_client.py
 import thriftpy2
 from thriftpy2.rpc import make_client
@@ -76,7 +76,7 @@ Answer:
 
 ```python
 # Protobuf schema (book.proto)
-# Protobuf schema (book.proto)
+
 %%writefile ../schema/book.proto
 syntax = "proto3";
 
@@ -93,7 +93,7 @@ service Library {
 # python -m grpc_tools.protoc -I./schema --python_out=. --grpc_python_out=. ./schema/book.proto
 
 # Protobuf server (book_server.py)
-# Protobuf server (book_server.py)
+
 %%writefile ../book_server.py
 import grpc
 from concurrent import futures
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     server.wait_for_termination()
 
 # Protobuf client (book_client.py)
-# Protobuf client (book_client.py)
+
 %%writefile ../book_client.py
 import grpc
 import book_pb2
@@ -138,8 +138,7 @@ with grpc.insecure_channel("localhost:50051") as channel:
 
 ## Submission
 
-- Submit the URL of the GitHub Repository that contains your work to NTU black board.
-- Should you reference the work of your classmate(s) or online resources, give them credit by adding either the name of your classmate or URL.
-- Used Github Co-Pilot to create Book.proto, student_client.py, student_server.py, student.thrift
-- Took help from chatgpt to check the code.
-- Checked the code on Colab
+- Used GitHub Copilot to generate initial drafts of book.proto, student_client.py, student_server.py, and student.thrift.
+- Used ChatGPT to validate and correct the code.
+- Executed and tested the code successfully on Google Colab.
+
